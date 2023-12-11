@@ -2,7 +2,9 @@
 const express = require('express');
 const { dbConnection } = require('./database/config');
 const cors = require('cors')
-require('dotenv').config()
+require('dotenv').config();
+const path = require('path');
+
 
 //Crear el servidor de express
 const app = express();
@@ -21,8 +23,13 @@ app.use(express.json())
 
 //Rutas
 //TODO: auth //crear, login, renew
-app.use('/api/auth', require('./routes/auth'))
-app.use('/api/events', require('./routes/events'))
+app.use('/api/auth', require('./routes/auth'));
+app.use('/api/events', require('./routes/events'));
+
+//Redirige al index.html
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "../public", "index.html"));
+  });
 
 //Escuchar peticiones
 app.listen(process.env.PORT, () => {
