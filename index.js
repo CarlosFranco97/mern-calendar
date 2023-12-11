@@ -28,7 +28,7 @@ app.use('/api/events', require('./routes/events'));
 
 //Redirige al index.html
 app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../public", "index.html"));
+    res.sendFile(path.resolve(__dirname, "./public", "index.html"));
   });
 
 //Escuchar peticiones
