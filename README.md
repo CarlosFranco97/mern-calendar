@@ -25,7 +25,7 @@ CORS: Configuración de permisos de acceso desde el frontend.
 ## Instalación y configuración
 
 1. Clona el repositorio:
-   git clone https://github.com/tu-usuario/mern-calendar.git
+   git clone https://github.com/carlosfranco97/mern-calendar.git
 
 2. Muevete en la terminal
 cd backend-mern-calendar
